@@ -59,6 +59,15 @@ public function wpforms_not_loaded_notice() {
 		return $environment;
 	}
 
+public function __construct()
+	{
 
+		if (!$this->check_environment()) {
+			return;
+		}
+
+		$this->init_auto_loader();
+		$this->includes();
+		$this->init_hooks();
 ```
 
